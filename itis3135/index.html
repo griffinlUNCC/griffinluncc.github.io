@@ -6,10 +6,31 @@
     <title>Griffin Leventhal || ITSC-3135 Homepage</title>
     <link rel="stylesheet" href="./style.css" />
     <script src="index.js" defer></script>
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Monserrat font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Linting/HTML Validator  -->
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
+
   <body>
     <header>
-      <h1>Griffin leventhal || ITIS 3135</h1>
+      <h1>Griffin Leventhal || ITIS 3135</h1>
       <nav>
         <a href="./index.html">Home</a>
         <a href="./pages/introduction.html">Introduction</a>
@@ -18,13 +39,13 @@
     </header>
     <main>
       <h2>ITIS 3135 Home</h2>
-      <p>This is all the content for my ITIS 3135 class</p>
+      <p>This is all the content for my ITIS 3135 class.</p>
     </main>
     <footer>
       <nav>
         <a href="https://gleventh.charlotte.edu">My UNCC Home Page</a>
-        <a href="https://github.com/griffinlev039">Github</a>
-        <a href="https://griffinlev039.github.io">Course Page</a>
+        <a href="https://github.com/griffinluncc">Github</a>
+        <a href="https://griffinluncc.github.io">Course Page</a>
         <a href="FreeCodeCamp Link">FreeCodeCamp</a>
         <a href="CodeCademyLink">Codecademy</a>
         <a href="https://www.linkedin.com/in/griffinlevdev">LinkedIn</a>
@@ -32,4 +53,40 @@
       <p>Designed by Leventhal Design Firm @c 2025</p>
     </footer>
   </body>
+  <style>
+    :root {
+      --primary-color: #ed6a5a;
+      --primary-color-darker: #c8594a;
+      --font-color: #292f36;
+      --tertiary-color: #d6d1b1;
+      --bg-color-secondary: #c7efcf;
+      --bg-color: #eef5db;
+    }
+
+    h1,
+    nav,
+    footer > p {
+      text-align: center;
+    }
+
+    h1, h2{
+      font-family: "Monserrat", sans-serif;
+    }
+
+    p {
+      font-family: "Inter", sans-serif;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--font-color);
+    }
+
+    a:any-link {
+      color: var(--primary-color);
+    }
+
+    a:hover {
+      color: var(--primary-color-darker);
+    }
+  </style>
 </html>

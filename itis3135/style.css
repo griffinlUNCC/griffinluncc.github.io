@@ -1,0 +1,31 @@
+/* https://coolors.co/ed6a5a-292f36-d6d1b1-c7efcf-eef5db for colors */
+
+
+
+body {
+  background-color: #ffffff;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+#page-wrapper {
+  height: 100%;
+  width: 100%;
+  max-width: 950px;
+  margin: auto;
+}
+#logo-wrapper {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+  border-bottom: 1px solid #006633;
+}
+#content-wrapper {
+  width: 100%;
+  max-width: 950px;
+  margin: auto;
+  text-align: center;
+}
+a {
+  color: #006633;
+}
