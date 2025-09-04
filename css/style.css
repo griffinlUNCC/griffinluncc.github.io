@@ -1,0 +1,40 @@
+:root {
+  --primary-color: #ed6a5a;
+  --primary-color-darker: #c8594a;
+  --font-color: #292f36;
+  --tertiary-color: #d6d1b1;
+  --bg-color-secondary: #c7efcf;
+  --bg-color: #eef5db;
+}
+nav,
+footer > p {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Monserrat", sans-serif;
+}
+
+h2 {
+  font-family: "Monserrat", sans-serif;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+}
+body {
+  margin: 2%;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  max-width: 1000px;
+  width: 80%;
+}
+
+a:any-link {
+  color: var(--primary-color);
+}
+
+a:hover {
+  color: var(--primary-color-darker);
+}
