@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* Color scheme URL: https://coolors.co/423e37-e3b23c-edebd7-a39594-6e675f */
+      /* Todo: 
+            - Set Font
+            - Finalize text
+            - Add footer links
+            - Add validator
+            - Review list saved in Documents    
+    */
+
+      @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+      :root {
+        --primary-color: #e3b23c;
+        --secondary-color: #423e37;
+        --background-color: #edebd7;
+        --foreground-color: #a39594;
+        --text-color: #423e37;
+        --heading-color: #3a4f41;
+      }
+      p,
+      a,
+      li,
+      ul,
+      span {
+        font-family: "Raleway", serif;
+        font-weight: normal;
+      }
+
+      body {
+        background-color: var(--background-color);
+      }
+
+      h2,
+      h3 {
+        font-family: "Raleway", serif;
+        color: var(--heading-color);
+      }
+
+      h1 {
+        color: var(--heading-color);
+        font-size: 3rem;
+        font-family: "Raleway", sans-serif;
+        font-weight: 500;
+      }
+
+      p,
+      li {
+        color: var(--text-color);
+      }
+
+      a {
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+
+      a:hover {
+        font-weight: 600;
+      }
+
+      header {
+        width: 100%;
+        text-align: center;
+      }
+
+      body {
+        width: 100%;
+      }
+
+      footer {
+        width: 100%;
+        filter: contrast(-20%);
+        text-align: center;
+      }
+
+      .slogan {
+        font-style: italic;
+      }
+
+      #main-content {
+        width: min(600px, 100%);
+        margin: 0 auto;
+      }
+
+      #logo {
+        width: 6rem;
+      }
+      .icon {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+
+    <!-- Linting/HTML Validator  -->
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="icon">
+        <img
+          src="./img/g-logo.svg"
+          id="logo"
+          alt="Decorative logo of the letter G"
+        />
+        <h1>Leventhal Design Firm</h1>
+      </div>
+      <p class="slogan">Reimagining Classic Brands</p>
+    </header>
+    <main>
+      <div id="main-content">
+        <h2>Griffin Leventhal's Services</h2>
+        <p>
+          Griffin Leventhal Design Firm is a modern firm specializing in
+          modernizing older sites. We excel in implementing design languages
+          such as Material as well as custom or proprietary design langauges as
+          well. We will help you transition older sites into sleek and modern
+          variants that will boost sales and ensure easy maintenence for years
+          to come.
+        </p>
+        <h3>Services Offered</h3>
+        <ul>
+          <li>Rapid Prototyping</li>
+          <li>Static Webpages</li>
+          <li>Website Design Schemes</li>
+          <li>Dynamic Webpages</li>
+          <li>Modern Redesigning</li>
+        </ul>
+        <p>
+          Clients and I go through a few stages. We start by strictly defining
+          the goals of the client - ensuring we leave with a clear design
+          stylesheet that can be used again in the future. We then go through an
+          iterative design process in which we constantly refer to you for
+          feedback until a final design is settled upon. Finally, we establish a
+          plan for long-term support - whether thats designing it for
+          maintenence for others or establishing a plan for regular maintenance
+          and on-call support.
+        </p>
+        <address>
+          5555 Education Ln. <br />
+          City, State, 55555 <br />
+          555 234-4205 <br />
+          noreply@proton.me <br />
+        </address>
+      </div>
+    </main>
+    <footer>
+      <nav>
+        <a href="https://github.com/griffinluncc">Github</a> |
+        <a href="https://www.linkedin.com/in/griffinlevdev">LinkedIn</a>
+      </nav>
+      <p>
+        <span class="slogan">Reimagining Classic Brands</span> | Copyright 2025
+      </p>
+    </footer>
+  </body>
+</html>
