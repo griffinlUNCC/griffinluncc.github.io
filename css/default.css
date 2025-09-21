@@ -24,7 +24,7 @@
         font-family: "Inter", sans-serif;
       }
       body {
-        margin: 2%;
+        margin: 0 auto;
         background-color: var(--bg-color);
         color: var(--font-color);
         max-width: 1000px;
