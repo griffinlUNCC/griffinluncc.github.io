@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>North Carolina Fighting Game Community</title>
+    <script src="./index.js" defer></script>
+    <!-- IMPORTING FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Linting/HTML Validator -->
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../scripts/html-include.js" defer></script>
+    <style>
+      * {
+        margin: 0px;
+        /* border: 1px solid red; */
+        font-family: "Quicksand", sans-serif;
+      }
+
+      /* COLORS: https://coolors.co/palette/fffcf2-ccc5b9-403d39-252422-eb5e28 */
+      :root {
+        --primary-color: #eb5e28;
+        --text-color: #fffcf2;
+        --alt-text-color: #ccc5b9;
+        --background-color: #403d39;
+        --foreground-color: #252422;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--background-color);
+      }
+
+      header * {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--foreground-color);
+        padding-bottom: 4px;
+      }
+
+      footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-weight: bolder;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 10%;
+        color: var(--text-color);
+        background-color: var(--foreground-color);
+      }
+
+      h1 {
+        font-family: "BBH Sans Bogle", sans-serif;
+        color: var(--primary-color);
+        font-size: 5rem;
+      }
+
+      h2 {
+        font-size: 2.3rem;
+      }
+
+      h3 {
+        font-size: 1.45rem;
+      }
+
+      figure {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 35px;
+        max-width: 500px;
+        max-height: 300px;
+      }
+
+      img {
+        width: 100%;
+        overflow: hidden;
+      }
+
+      li a {
+        font-weight: 900;
+        font-size: 1.7rem;
+      }
+      p {
+        font-size: 1.1rem;
+      }
+
+      section {
+        margin: 0 auto;
+        max-width: 60%;
+        min-width: 750px;
+        padding: 25px 30px;
+        background-color: var(--background-color);
+        color: var(--text-color);
+      }
+      .hidden {
+        visibility: hidden;
+        display: none;
+      }
+
+      nav ul {
+        width: 100vw;
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 15px;
+        list-style: none;
+      }
+
+      a {
+        color: var(--alt-text-color);
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: var(--text-color);
+      }
+
+      a:visited {
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      a:not(.inactive) {
+        color: var(--primary-color);
+      }
+
+      /* Table Stylings */
+      table {
+        background-color: var(--foreground-color);
+        padding: 25px;
+        border-radius: 8px;
+        border-left: 4px solid var(--primary-color);
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+      }
+
+      thead tr {
+        background-color: var(--text-color);
+      }
+
+      td {
+        color: var(--text-color);
+        padding: 8px;
+      }
+
+      th {
+        padding: 8px;
+        /* border: 1px solid var(--text-color); */
+      }
+
+      thead th {
+        color: var(--primary-color);
+      }
+
+      /* Form Stylings */
+      form {
+        margin-bottom: 20%;
+        background-color: var(--foreground-color);
+        padding: 25px;
+        border-radius: 8px;
+        border-left: 4px solid var(--primary-color);
+      }
+
+      form p {
+        margin-bottom: 20px;
+        font-size: 1rem;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--text-color);
+        font-weight: 600;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 12px;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        border: 2px solid var(--alt-text-color);
+        border-radius: 4px;
+        font-family: "Quicksand", sans-serif;
+        font-size: 1rem;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        box-sizing: border-box;
+      }
+
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: var(--primary-color);
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      input[type="submit"] {
+        background-color: var(--primary-color);
+        color: var(--foreground-color);
+        padding: 14px 32px;
+        border: none;
+        border-radius: 4px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: "Quicksand", sans-serif;
+      }
+
+      input[type="submit"]:hover {
+        background-color: var(--primary-color);
+      }
+
+      option {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>NC FGC</h1>
+      <nav>
+        <ul>
+          <li><a href="" class="inactive" id="who-toggle">Who</a></li>
+          <li><a href="" class="" id="what-toggle">What</a></li>
+          <li><a href="" class="inactive" id="when-toggle">When</a></li>
+          <li><a href="" class="inactive" id="where-toggle">Where</a></li>
+          <li><a href="" class="inactive" id="how-toggle">How</a></li>
+          <li><a href="" class="inactive" id="why-toggle">Why</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hidden" id="who">
+        <h2>About Me</h2>
+        <figure>
+          <img
+            src="./images/DSC_8148-instagram.jpg"
+            alt="Two people playing a round of Guilty Gear +R"
+          />
+          <figcaption>A photo from a local event I attended!</figcaption>
+        </figure>
+        <h3>Who am I?</h3>
+        <p>
+          My name is Griffin Leventhal, and I am a 21 year old student at UNC
+          Charlotte. Coming from the Raleigh area and travelling to Charlotte
+          allowed me to experience both cities, and introduced me to two
+          seperate yet similar fighting game communities. I was able to
+          experience the welcoming nature of these communities, and found myself
+          in the midst of a community and group of people that couldn't wait to
+          share their hobby and scene with everyone they knew. As such, I feel
+          like it's my duty to further this goal and introduce more people! I
+          myself got introduced via Tekken and Guilty Gear, where I quickly
+          progressed to become a very mediocre player within the scene. I play
+          Faust in Guilty Gear and Bryan in Tekken.
+        </p>
+        <h3>Who is the NC FGC?</h3>
+        <p>
+          The NC FGC itself is a welcome community that celebrates all kinds of
+          fighting games. This vibrant scene is broadly categorized into
+          distinct sub-genres such as anime, traditional, arena, and platform
+          fighters, each boasting its own developed culture and dedicated player
+          base within the larger NC FGC. Despite these unique identities, an
+          overarching culture of friendly competition unites everyone, fostering
+          an environment where players can grow and connect. Furthermore, the NC
+          FGC maintains strong connections to the broader North American
+          Fighting Game Community, frequently organizing group trips to major
+          events, which not only strengthens local bonds but also elevates the
+          region's presence on the national stage.
+        </p>
+      </section>
+      <section class="" id="what">
+        <h2>Fighting Games Explained</h2>
+        <figure>
+          <img
+            src="./images/fighting-game-types.png"
+            alt="A chart displaying the various categories fighting games can be placed into."
+          />
+          <figcaption>
+            A chart developed by Core-A showing the various categories fighting
+            games fit into.
+          </figcaption>
+        </figure>
+        <h3>What are fighting games?</h3>
+        <p>
+          Fighting games take many forms, but are usually one or two players
+          against another team of one or two players, engaging in direct, often
+          one-on-one, combat. These games typically feature a diverse roster of
+          characters, each with unique abilities, special moves, and playstyles,
+          challenging players to master their chosen fighter. Fighting games
+          span many different types, from those focusing on executing difficult,
+          precise combos to those based on outsmarting your opponent through
+          strategic positioning and mind games, and everything in between,
+          offering a rich variety of experiences for players to explore.
+        </p>
+        <h3>What is a fighting game community?</h3>
+        <p>
+          A fighting game community can be summed up as "A group of people who
+          get together to play fighting games!" But it has far more depth than
+          that. At its core, an FGC is a vibrant ecosystem encompassing both
+          competitive and casual players. It's a place where individuals can
+          push their skills in intense tournaments, learn from seasoned
+          veterans, and celebrate the thrill of victory or the lessons of
+          defeat. Simultaneously, it fosters a welcoming environment for casual
+          players to enjoy friendly matches, discover new games, and simply
+          share their passion. Beyond the gameplay, these communities are built
+          on genuine friendship and camaraderie, offering a strong sense of
+          belonging, mutual support, and shared enthusiasm for the genre that
+          extends well beyond the virtual arena.
+        </p>
+      </section>
+
+      opti
+      <section class="hidden" id="when">
+        <h2>Schedule of Events</h2>
+        <figure>
+          <img
+            src="./images/evo-fgc.webp"
+            alt="A picture of the crowd at the fighting game tournament EVO."
+          />
+          <figcaption>
+            A picture of the crowd at fighting game tournament EVO.
+          </figcaption>
+        </figure>
+        <p>
+          Events within fighting game communities can be split between major and
+          minor events - also known as majors and locals. Below is a list of
+          significant major events to look out for within North Carolina in the
+          next few months. For local events, its better to check the NC FGC
+          Discord or Facebook groups, as those are frequent and often change
+          venues or times.
+        </p>
+        <table>
+          <h3>Upcoming NC FGC Events</h3>
+
+          <thead>
+            <tr>
+              <th>Event Name</th>
+              <th>Date</th>
+              <th>Location</th>
+              <th>Primary Game Focus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tar Heel Throwdown</td>
+              <td>November 9, 2025</td>
+              <td>Raleigh Convention Center, Raleigh, NC</td>
+              <td>
+                Multi-Game Major (Street Fighter 6, Tekken 8, Guilty Gear
+                Strive)
+              </td>
+            </tr>
+            <tr>
+              <td>Queen City Clash</td>
+              <td>November 23, 2025</td>
+              <td>Charlotte Esports Arena, Charlotte, NC</td>
+              <td>
+                Anime Fighter Showcase (Guilty Gear Strive, Granblue Fantasy
+                Versus: Rising)
+              </td>
+            </tr>
+            <tr>
+              <td>Triangle Tournament Series: Fall Finale</td>
+              <td>December 7, 2025</td>
+              <td>Durham Community Center, Durham, NC</td>
+              <td>
+                Platform Fighters (Super Smash Bros. Ultimate, Super Smash Bros.
+                Melee)
+              </td>
+            </tr>
+            <tr>
+              <td>Coastal Combo Breaker</td>
+              <td>December 14, 2025</td>
+              <td>Wilmington Gaming Cafe, Wilmington, NC</td>
+              <td>
+                Retro & Classic Fighters (Street Fighter II Turbo, Marvel vs.
+                Capcom 2)
+              </td>
+            </tr>
+            <tr>
+              <td>Appalachian Arena Ascent</td>
+              <td>January 11, 2026</td>
+              <td>Asheville Tech Hub, Asheville, NC</td>
+              <td>Tekken 8 Launch Event & Tournament</td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <br />
+        <h3>Suggest an Event!</h3>
+        <form method="post">
+          <p>
+            <label for="eventName">Suggested Event Name:</label><br />
+            <input type="text" id="eventName" name="eventName" required />
+          </p>
+
+          <p>
+            <label for="preferredDate">Preferred Date (or timeframe):</label
+            ><br />
+            <input
+              type="text"
+              id="preferredDate"
+              name="preferredDate"
+              placeholder="e.g., Spring 2026, March 15th"
+            />
+          </p>
+
+          <p>
+            <label for="preferredLocation">Preferred City/Region:</label><br />
+            <input
+              type="text"
+              id="preferredLocation"
+              name="preferredLocation"
+              placeholder="e.g., Raleigh, Charlotte, Triad"
+            />
+          </p>
+
+          <p>
+            <label for="gameFocus"
+              >Primary Game Focus (select one or more):</label
+            ><br />
+            <select id="gameFocus" name="gameFocus" multiple>
+              <option value="multi-game">Multi-Game Major</option>
+              <option value="traditional">
+                Traditional Fighters (e.g., Street Fighter, Tekken)
+              </option>
+              <option value="anime">
+                Anime Fighters (e.g., Guilty Gear, Granblue Fantasy)
+              </option>
+              <option value="platform">
+                Platform Fighters (e.g., Smash Bros.)
+              </option>
+              <option value="arena">
+                Arena Fighters (e.g., Naruto, Dragon Ball FighterZ)
+              </option>
+              <option value="other">Other/Specific Game</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="specificGame"
+              >If 'Other/Specific Game', please specify:</label
+            ><br />
+            <input type="text" id="specificGame" name="specificGame" />
+          </p>
+
+          <p>
+            <label for="additionalDetails"
+              >Additional Details or Suggestions:</label
+            ><br />
+            <textarea
+              id="additionalDetails"
+              name="additionalDetails"
+              rows="5"
+              cols="40"
+            ></textarea>
+          </p>
+
+          <p>
+            <input type="submit" value="Submit Event Suggestion" />
+          </p>
+        </form>
+      </section>
+      <section class="hidden" id="where">
+        <h2>Where Events Take Place</h2>
+        <figure>
+          <img
+            src="./images/xepher-arcade.webp"
+            alt="A picture of the community centered around Durham's Xepher Arcade."
+          />
+          <figcaption>
+            Xepher Arcade, a hub for fighting game players in Durham!
+          </figcaption>
+        </figure>
+        <p>
+          As can be guessed, the NC FGC takes place in North Carolina! These
+          events tend to be centered around local universities for younger
+          participants, events at bars for 21+ events, and events at local
+          arcades as well, providing varied environments that cater to different
+          age groups and preferences. There are also larger events in state that
+          occur in places such as the North Carolina Convention Center, allowing
+          the community to host everything from intimate local gatherings to
+          significant, multi-game tournaments that draw players from across the
+          region and beyond, truly showcasing the breadth and depth of the NC
+          FGC.
+        </p>
+        <p>
+          Events also occur outside of North Carolina, in the form of a regional
+          trip to areas such as Las Vegas, Nevada for EVO, and Frosty Faustings
+          in Lombard, Illinois! These excursions highlight the NC FGC's strong
+          ties to the broader national and international scene, offering members
+          invaluable opportunities to compete against top talent, experience the
+          excitement of major tournaments, and forge connections with players
+          from across the globe, bringing back new skills and experiences to
+          enrich the local community.
+        </p>
+      </section>
+      <section class="hidden" id="how">
+        <h2>How Tournaments Run</h2>
+        <figure>
+          <img
+            src="./images/tournament-results.jpg"
+            alt="A graphic displaying the top 8 players from the local tournament Warring Triad in 2024."
+          />
+          <figcaption>
+            The results from the Warring Triad tournament, a local tournament
+            that took place in 2024!
+          </figcaption>
+        </figure>
+        <p>
+          There are quite a few rulesets used to govern these tournaments within
+          the FGC, but there are the two most commonly used formats:
+        </p>
+        <br />
+        <h3>Double Elimination</h3>
+        <p>
+          A double-elimination bracket is a tournament format where a
+          participant must lose two matches to be eliminated from the
+          competition. Players start in a "Winners Bracket," and if they lose a
+          match there, they drop down into a "Losers Bracket." In the Losers
+          Bracket, another loss means complete elimination. This structure
+          provides a second chance for competitors, ensuring that a single bad
+          match doesn't immediately end their tournament run, and often leads to
+          exciting grand finals where the Winners Bracket finalist might need to
+          be beaten twice by the Losers Bracket finalist.
+        </p>
+        <br />
+        <h3>Round Robin</h3>
+        <p>
+          A round-robin bracket is a tournament format where every participant
+          plays every other participant a set number of times, typically once.
+          Instead of advancing through a bracket based on wins and losses,
+          participants accumulate points or simply track their win/loss record
+          against all opponents. The winner is determined by who has the best
+          overall record at the end of all matches. This format is often used in
+          smaller tournaments or league play where it's important to establish a
+          clear ranking among all competitors, as it thoroughly tests each
+          participant against the entire field.
+        </p>
+      </section>
+      <section class="hidden" id="why">
+        <h2>Why Join the FGC?</h2>
+        <figure>
+          <img
+            src="./images/evo-crowd-celebrating.jpg"
+            alt="The crowd celebrating a win at EVO."
+          />
+          <figcaption>The crowd celebrating a win at EVO!</figcaption>
+        </figure>
+        <p>
+          Finding a sense of community is what everyone wants, and when that
+          sense of community is representative of a wider competitive passion,
+          it creates a strong bond and an environment that keeps people coming
+          back. Seeing yourself improve while making friends and sharing
+          strategies, celebrating both individual victories and collective
+          achievements, fosters a unique camaraderie. This environment provides
+          not just a place to hone skills, but also a supportive network for
+          learning, mentorship, and mutual encouragement, where players can grow
+          both as competitors and as individuals, forging lasting connections
+          through shared challenges and triumphs that extend well beyond the
+          game itself.
+        </p>
+        <br />
+        <blockquote>
+          "The NC FGC is a place where you'll find some of the most dedicated
+          competitors pushing each other to new heights, but the moment the
+          match is over, it's all high-fives and shared laughs. We take our
+          games seriously, but we never forget that we're all here to have a
+          great time and build something special together." -
+          <span class="quote-name">Local Tournament Organizer</span>
+        </blockquote>
+      </section>
+    </main>
+    <footer>
+      <p>
+        Designed by
+        <a href="../../itis3135/leventhaldesign.com/">Leventhal Design</a>
+        <br />
+        Copyright 2025
+      </p>
+    </footer>
+  </body>
+</html>

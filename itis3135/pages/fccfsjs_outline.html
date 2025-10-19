@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./../../css/default.css" />
+        <script src="../scripts/html-include.js" defer></script>
+    <!-- Linting/HTML Validator -->
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+        table, tr, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        tr td:not(:nth-child(4)) {
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <div data-include="../components/subheader.html"></div>
+
+    <!-- Body -->
+    <main>
+      <h1>Course Planner Title</h1>
+      <p>This is a page that describes...</p>
+      <h2>JavaScript Curriculum</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Week Number</th>
+            <th>Course Title</th>
+            <th>Num of Assignments</th>
+            <th>Course Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Code Editors</td>
+            <td>5</td>
+            <td>
+              This portion goes over working with code editors and IDEs. It
+              covers concepts about VS Code and its installation, useful
+              shortcuts, and extensions.
+            </td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Variables and Strings</td>
+            <td>62</td>
+            <td>
+              This portion introduces you to declaring constant and standard
+              variables, as well as working with the different data types within
+              Javascript. You explore writing, modifying, and printing strings,
+              as well as various forms of concatenation.
+            </td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Booleans and Numbers</td>
+            <td>37</td>
+            <td>
+              In this portion, you explore the basics of boolean operations and
+              numerical operations within Javascript. You work with various
+              addition and subtraction operations, and explore their usecases.
+              You also cover Unary/Bitwise conditions, the basics of boolean
+              conditionals and comparisons, and explore the crossover of
+              booleans and numbers with falsey and truthy operations.
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Functions</td>
+            <td>38</td>
+            <td>
+              You learn how to implement reusable code by declaring and calling
+              functions. You cover the syntax used to declare and call
+              functions, as well as how to pass in arguments and use them within
+              your function. Finally, you go over returns and their default
+              values.
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Arrays</td>
+            <td>35</td>
+            <td>
+              You learn what an array is and how it can be utilized within
+              Javascript. You learn how to declare them, various array-related
+              operations and methods, and the best usecases for arrays.
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Objects</td>
+            <td>28</td>
+            <td>
+              In this section, you are introduced to Javascript objects. You
+              learn how to create and modify these objects and their properties,
+              distinguish between primitive and non-primitive data types, as
+              well as methods vs functions. Finally, you learn how to parse JSON
+              and its relationship with JS Objects.
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Loops</td>
+            <td>22</td>
+            <td>
+              In this section, you are introduced to loops within Javascript.
+              You review and implement the different types of loops, such as
+              For, for-in, for-of, while, and do-while loops.
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Javascript Fundamentals Review</td>
+            <td>30</td>
+            <td>
+              In this section, you review and implement all of the previously
+              discussed topics together. This provides numerous small projects
+              that allow you to ensure you have a strong grasp on these previous
+              concepts.
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Higher Order Functions and Callbacks</td>
+            <td>37</td>
+            <td>
+              This section introduces both higher order functions and callbacks.
+              It explains their importance and usecases within javascript, as
+              well as various examples, such as map, filter, for-each, every,
+              and some.
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>DOM Manipulation and Events</td>
+            <td>87</td>
+            <td>
+              This section introduces DOM manipulation, and explains its usecase
+              and importance within Javascript. You learn how to target and
+              change elements, as well as add further interactivity to webpages
+              via the DOM.
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>JavaScript and Accessibility</td>
+            <td>42</td>
+            <td>
+              This section discusses maintaining accessibility when adding
+              dynamic content. It covers both how this accessibility is added
+              (ARIA States) and the important standards regarding it.
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Debugging</td>
+            <td>8</td>
+            <td>
+              This section discusses debugging Javascript. It goes over common
+              errors and how to address them by both prevention and "catching"
+              said errors with Try/Catch. It also introduces utilizing a
+              debugger.
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Basic Regex</td>
+            <td>47</td>
+            <td>
+              This portion introduces "Regex", also known as Regular
+              Expressions. It covers how these expressions are used to sort and
+              parse data, and various methods that can be utilized to do so,
+              including modifiers, character classes, lookaheads, and
+              quantifiers.
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Form Validation</td>
+            <td>103</td>
+            <td>
+              This section introduces further form validation by using
+              JavaScript. It discusses the importance of validating forms
+              separately, and the methods to do so, such as preventing default
+              submission and displaying error messages.
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Dates</td>
+            <td>5</td>
+            <td>
+              This section introduces the Date object. It discusses the methods
+              used to interact with and modify these objects, as well as the
+              usecases for these methods and formatting.
+            </td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Audio and Video Events</td>
+            <td>55</td>
+            <td>
+              This section introduces both audio and video elements. It explains
+              the Audio and Video object, as well as their constructors and
+              methods. It also covers the HTMLMediaElement API and its usecase.
+            </td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Maps and Sets</td>
+            <td>37</td>
+            <td>
+              This section covers both Maps and Sets, and their usecases. It
+              also discusses variations of maps and sets such as WeakSets and
+              WeakMaps.
+            </td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>localStorage and CRUD Operations</td>
+            <td>78</td>
+            <td>
+              This section delves into localStorage and CRUD
+              (Create/Read/Update/Delete). It explains what localStorage is, its
+              standard usecases, and how it relates to sessionStorage, cookies,
+              Cache API, and Index DB.
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Classes</td>
+            <td>68</td>
+            <td>
+              This section introduces classes and their related functionality.
+              They discuss the creation of classes, inheritance, the 'this'
+              keyword, static properties, and methods within classes.
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Recursion</td>
+            <td>112</td>
+            <td>
+              This section covers recursion within JavaScript. It talks about
+              the call stack, best usecases of recursion, as well as the
+              potential risks of it.
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Functional Programming</td>
+            <td>23</td>
+            <td>
+              This portion covers functional programming and what it means
+              within Javascript. It introduces terms such as currying, nesting
+              functions, and function purity vs impurity.
+            </td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Asynchronous JavaScript</td>
+            <td>36</td>
+            <td>
+              This portion introduces readers to asynchronous programming. You
+              learn about differences between synchronous and asynchronous
+              programming, and the various keywords used to implement it. You
+              also cover relevant functions that use async, such as the Fetch
+              API.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Front End Libraries</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Week Number</th>
+            <th>Course Title</th>
+            <th>Num of Assignments</th>
+            <th>Course Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>8</td>
+            <td>React Fundamentals</td>
+            <td>37</td>
+            <td>
+              This portion introduces the ideas about libraries and frameworks.
+              It discusses both the benefits of these frameworks and the issues
+              that may arise from them. It also introduces the concept of a
+              Single Page Application, and how react ties into all of the above.
+            </td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>React State, Hooks, and Routing</td>
+            <td>115</td>
+            <td>
+              This portion introduces users to the functionality of React and
+              how React maintains interactivity. It explains how events work, as
+              well as state and how state "hooks" into react components. It
+              discusses how state updates and interacts with various objects,
+              and how arrays work. It also covers the flow of data within React.
+            </td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Performance</td>
+            <td>16</td>
+            <td>
+              This portion discusses the performance of React, and the concepts
+              that ensure sites are responsive and performant.
+            </td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Testing</td>
+            <td>17</td>
+            <td>
+              This introduces the theory of testing react, and the purpose of
+              testing within a web development framework. It emphasizes the
+              importance of testing and how it relates to a development
+              lifecycle.
+            </td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>CSS Libraries and Frameworks</td>
+            <td>94</td>
+            <td>
+              This portion discusses what CSS frameworks are, and their
+              advantages and disadvantages. It also covers and explores the
+              value of CSS preprocessors.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p>This is a footer with a contract or smth</p>
+    </main>
+    <!-- Footer -->
+    <div data-include="../components/subfooter.html"></div>
+  </body>
+</html>
