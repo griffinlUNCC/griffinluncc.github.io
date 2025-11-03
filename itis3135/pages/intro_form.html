@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create an Introduction Form</title>
+    <script src="../scripts/intro-form.js" defer></script>
+    <script src="./../scripts/generate-html.js" defer></script>
+    <script src="./../scripts/generate-json.js" defer></script>
+    <link rel="stylesheet" href="../../css/default.css" />
+    <!-- Linting/HTML Validator -->
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../scripts/html-include.js" defer></script>
+
+    <!-- HIGHLIGHT.JS IMPORT STUFF HERE -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+    <style>
+      * {
+        margin: 0;
+      }
+
+      h2 span {
+        font-family: "Monserrat", sans-serif;
+      }
+      body {
+        margin: 5px;
+      }
+      main {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-flow: row nowrap;
+      }
+
+      .hidden {
+        display: none;
+        visibility: hidden;
+      }
+
+      #input-container {
+        box-sizing: border-box;
+        width: 50%;
+        height: 100%;
+        overflow: scroll;
+        padding: 5px;
+      }
+      #output-container,
+      #html-output-container,
+      #json-output-container {
+        box-sizing: border-box;
+        height: 100%;
+        width: 50%;
+        padding: 40px;
+      }
+      #input-container p {
+        font-family: "Inter", sans-serif;
+        display: flex;
+        flex-flow: column;
+        width: 40%;
+      }
+
+      #preferred-name-output::before {
+        content: '"';
+      }
+      #preferred-name-output::after {
+        content: '"';
+      }
+
+      /* TEMP below */
+      /* #json-output-container {
+        width: 100vw;
+        height: 100vh;
+        background-color: red;
+      }
+      #html-output-container {
+        width: 100vw;
+        height: 100vh;
+        background-color: blue;
+      } */
+    </style>
+  </head>
+  <body>
+    <div data-include="../components/subheader.html"></div>
+    <main>
+      <div id="input-container">
+        <form method="post">
+          <fieldset>
+            <legend>Personal Information</legend>
+            <p>
+              <label for="first-name">First Name:</label>
+              <input type="text" id="first-name" />
+            </p>
+            <p>
+              <label for="preferred-name">Preferred Name</label
+              ><input type="text" id="preferred-name" />
+            </p>
+            <p>
+              <label for="middle-initial">Middle Initial</label
+              ><input type="text" name="middle-initial" id="middle-initial" />
+            </p>
+            <p>
+              <label for="last-name">Last Name:</label>
+              <input type="text" id="last-name" />
+            </p>
+            <p>
+              <label for="divider">Divider</label>
+              <input type="text" id="divider" />
+            </p>
+            <p>
+              <label for="mascot-descriptor">Mascot Descriptor:</label>
+              <input type="text" id="mascot-descriptor" />
+            </p>
+            <p>
+              <label for="mascot-animal">Mascot Animal:</label>
+              <input type="text" id="mascot-animal" />
+            </p>
+            <p>
+              <label for="image-upload">Image Upload:</label>
+              <input type="file" id="image-upload" />
+            </p>
+            <p>
+              <label for="image-caption">Image Caption:</label>
+              <input type="text" id="image-caption" />
+            </p>
+            <p>
+              <label for="primary-computer">Primary Computer:</label>
+              <input type="text" id="primary-computer" />
+            </p>
+            <p>
+              <label for="personal-statement">Personal Statement</label>
+              <input
+                type="text"
+                name="personal-statement"
+                id="personal-statement"
+              />
+            </p>
+            <p>
+              <label for="personal-background">Personal Background:</label>
+              <textarea
+                name="personal-background"
+                cols="30"
+                rows="10"
+                id="personal-background"
+              ></textarea>
+            </p>
+            <p>
+              <label for="professional-background"
+                >Professional Background:</label
+              >
+              <textarea
+                name="professional-background"
+                cols="30"
+                rows="10"
+                id="professional-background"
+              ></textarea>
+            </p>
+          </fieldset>
+          <fieldset>
+            <legend>Academic Information</legend>
+            <p>
+              <label for="academic-background">Academic Background:</label>
+              <textarea
+                name="academic-background"
+                cols="30"
+                rows="10"
+                id="academic-background"
+              ></textarea>
+            </p>
+            <p>
+              <label for="subject-background">Subject Background:</label>
+              <textarea
+                name="subject-background"
+                cols="30"
+                rows="10"
+                id="subject-background"
+              ></textarea>
+            </p>
+            <!-- Courses | Added primarily by JS later -->
+
+            <h3>Courses:</h3>
+            <div id="class-selection-container">
+              <div id="class-selection-controls">
+                <button id="add-class-btn">Add a class</button
+                ><button id="remove-class-btn">Remove a class</button>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Quote</legend>
+            <p>
+              <label for="quote-content">Quote Content</label>
+              <input type="text" id="quote-content" />
+            </p>
+            <p>
+              <label for="quote-author">Quote Author</label>
+              <input type="text" id="quote-author" />
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Links</legend>
+            <p>
+              <label for="github-link">GitHub Link</label
+              ><input type="text" name="github-link" id="github-link" />
+            </p>
+            <p>
+              <label for="linkedin-link">LinkedIn Link</label
+              ><input type="text" name="linkedin-link" id="linkedin-link" />
+            </p>
+            <p>
+              <label for="freecodecamp-link">freeCodeCamp Link</label
+              ><input
+                type="text"
+                name="freecodecamp-link"
+                id="freecodecamp-link"
+              />
+            </p>
+            <p>
+              <label for="personal-link">Personal Website Link</label
+              ><input type="text" name="personal-link" id="personal-link" />
+            </p>
+            <p>
+              <label for="codecademy-link">Codecademy Link</label
+              ><input type="text" name="codecademy-link" id="codecademy-link" />
+            </p>
+          </fieldset>
+          <button type="reset">Reset</button>
+          <button>Clear</button>
+          <input type="radio" id="standard-mode" name="mode-toggle" checked />
+          <label for="standard-mode">Standard Output</label>
+          <input type="radio" id="JSON-mode" name="mode-toggle" />
+          <label for="JSON-mode">JSON Output</label>
+          <input type="radio" id="HTML-mode" name="mode-toggle" />
+          <label for="HTML-mode">HTML Output</label>
+        </form>
+      </div>
+      <div id="html-output-container" class="hidden">
+        <h2>HTML Output</h2>
+        <pre><code id="html-target" class="language-html"></code></pre>
+      </div>
+      <div id="json-output-container" class="hidden">
+        <h2>JSON Output</h2>
+        <pre><code id="json-target" class="language-json"></code></pre>
+      </div>
+      <div id="output-container">
+        <h1>
+          <span id="first-name-output">Griffin</span>
+          <span id="preferred-name-output">Griffin</span>
+          <span id="middle-initial-output">J.</span>
+          <span id="last-name-output">Leventhal</span>
+          <span id="divider-output">|</span>
+          <span id="mascot-descriptor-output">Grateful</span>
+          <span id="mascot-animal-output">Gorilla</span>
+        </h1>
+        <h2 id="name-output">Introduction</h2>
+        <figure>
+          <img
+            src="../../img/PXL_20250602_020852805.jpg"
+            alt="A picture of me sitting on the top of a ramp at a skatepark."
+            id="image-upload-output"
+          />
+          <figcaption id="image-caption-output">
+            Me at the skatepark!
+          </figcaption>
+        </figure>
+        <p id="personal-statement-output">
+          Hey, my name is Griffin Leventhal and I am a senior studying computer
+          science with a concentration in software engineering!
+        </p>
+        <ul>
+          <li>
+            <h3>Personal Background:</h3>
+            <p id="personal-background-output">
+              I’m from Raleigh, but moved here for college and am enjoying it so
+              far! My hobbies include playing fighting games, reading, and
+              skateboarding as of recently.
+            </p>
+          </li>
+          <li>
+            <h3>Professional Background:</h3>
+            <p id="professional-background-output">
+              I have no industry experience, but have worked on quite a few
+              personal projects available on my Github, as well as some time at
+              McDonalds and Food Lion!
+            </p>
+          </li>
+          <li>
+            <h3>Academic Background:</h3>
+            <p id="academic-background-output">
+              I’m currently a senior majoring in Computer Science with a
+              concentration in software engineering. I started my degree at Wake
+              Technical Community College, and transferred for my junior year.
+            </p>
+          </li>
+          <li>
+            <h3>Subject Background:</h3>
+            <p id="subject-background-output">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
+              corporis accusantium eos temporibus consequuntur dolor pariatur
+              corrupti sequi reiciendis, magnam architecto possimus facere natus
+              nulla nostrum veniam quae sit. Reprehenderit?
+            </p>
+          </li>
+          <li>
+            <h3>Primary Computer:</h3>
+            <p id="primary-computer-output">ASUS Zephyrus G14 2020 Laptop</p>
+          </li>
+          <li>
+            <h3>Courses I'm Taking and Why:</h3>
+            <ul id="class-selection-output"></ul>
+          </li>
+          <li>
+            <h3>Personal Links:</h3>
+            <ul>
+              <li>
+                <h3>LinkedIn:</h3>
+                <a
+                  href="https://www.linkedin.com/in/griffinlevdev"
+                  target="_blank"
+                  id="linkedin-link-output"
+                  >Hyperlink</a
+                >
+              </li>
+              <li>
+                <h3>GitHub:</h3>
+                <a
+                  href="https://www.github.com/griffinlev039"
+                  target="_blank"
+                  id="github-link-output"
+                  >Hyperlink</a
+                >
+              </li>
+              <li>
+                <h3>Personal Website:</h3>
+                <a
+                  href="https://griffinlev.dev"
+                  target="_blank"
+                  id="personal-link-output"
+                  >Hyperlink</a
+                >
+              </li>
+              <li>
+                <h3>freeCodeCamp Profile</h3>
+                <a
+                  href="https://freecodecamp.com/griffinlev039"
+                  target="_blank"
+                  id="freecodecamp-link-output"
+                  >Hyperlink</a
+                >
+              </li>
+              <li>
+                <h3>Codecademy Profile</h3>
+                <a
+                  href="https://codecademy.com/griffinlev039"
+                  target="_blank"
+                  id="codecademy-link-output"
+                  >Hyperlink</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p id="quote">
+          "<i id="quote-content-output"
+            >You can fail at doing something you don't want, so you might as
+            well take a chance at what you love.</i
+          >" - <span id="quote-author-output">Jim Carrey</span>
+        </p>
+      </div>
+    </main>
+    <div data-include="../components/subfooter.html"></div>
+  </body>
+</html>
