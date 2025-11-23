@@ -1,0 +1,100 @@
+/* COLORS: https://coolors.co/80817e-595751-81735b-c2bfb5-ac9574 */
+
+:root {
+  --primary-color: #c2bfb5;
+  --background-color: #ac9574;
+  --foreground-color: #81735b;
+  --text-color: #434342;
+  --heading-color: #e6e6e6;
+}
+
+* {
+  margin: 0;
+  /* outline: 1px solid red; */
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--foreground-color);
+}
+
+p {
+  color: var(--text-color);
+}
+
+h1, h2, h3 {
+  color: var(--heading-color);
+}
+
+main {
+  min-height: 85%;
+  background-color: var(--background-color);
+}
+
+h2 {
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.paragraph {
+  padding: 0 15%;
+}
+
+header {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  height: 10%;
+  width: 100%;
+  background-color: var(--foreground-color);
+  padding: 0 200px 0 80px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    z-index: 2;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav a {
+  padding: 0 15px;
+}
+
+footer {
+  text-align: center;
+  background-color: var(--foreground-color);
+  height: 5%;
+}
+
+header a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none !important;
+  font-size: 1.4rem;
+  font-weight: 700;
+  transition: ease-in-out 0.3s;
+}
+
+header a:hover {
+  background-color: var(--background-color);
+  color: var(--foreground-color);
+  text-decoration: none !important;
+  transition: ease-in-out 0.3s;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-family: "inter";
+}
+
+a:hover {
+  text-decoration: underline;
+}

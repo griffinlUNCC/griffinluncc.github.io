@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alisha's Portfolio</title>
+
+    <!-- FONT IMPORT BELOW: -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/default.css" />
+    <script src="./js/html-include.js" defer></script>
+    <style>
+      #landing-image {
+        position: relative;
+        text-align: center;
+        color: white;
+        width: 100%;
+        height: 30vw;
+      }
+      #landing-image img {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        object-fit: cover;
+      }
+
+      #image-namecard {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        word-spacing: 2000px;
+        font-family: "Inter", sans-serif;
+        font-weight: 900;
+        font-size: 10rem;
+        filter: opacity(70%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <div data-include="./components/header.html"></div>
+    <main>
+      <div id="landing-image">
+        <img src="./img/temp-bg-rectangle.png" alt="Abstract Artwork" />
+        <h1 id="image-namecard">ALISHA ZHAO</h1>
+      </div>
+      <h2>About Me</h2>
+      <p class="paragraph">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis optio,
+        odio numquam cum ea aspernatur in ex placeat assumenda eaque voluptatum
+        libero repudiandae quis alias aliquid mollitia quod cumque
+        reprehenderit? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Voluptatem, eveniet nesciunt. Temporibus at sed ea aliquam, modi
+        laboriosam porro tempore, sint labore, dolores voluptate voluptatum
+        quam. Sunt enim architecto adipisci.
+      </p>
+    </main>
+    <!-- FOOTER -->
+    <div data-include="./components/footer.html"></div>
+  </body>
+</html>

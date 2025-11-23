@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alisha's Portfolio</title>
+
+    <!-- FONT IMPORT BELOW: -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/default.css" />
+    <script src="../js/html-include.js" defer></script>
+
+    <style>
+      :root {
+        --primary-color: #c2bfb5;
+        --background-color: #ac9574;
+        --foreground-color: #81735b;
+        --text-color: #434342;
+        --heading-color: #e6e6e6;
+      }
+      main {
+        display: flex;
+        flex-flow: row nowrap;
+      }
+      main > * {
+        width: 50%;
+        height: 100%;
+      }
+      form {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        gap: 10px;
+        box-sizing: border-box;
+        background-color: var(--foreground-color);
+        padding: 15px;
+        margin: 180px 30px;
+        border-left: 15px solid var(--primary-color);
+        border-radius: 15px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+          rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+      }
+
+      label {
+        color: var(--heading-color);
+      }
+
+      input {
+        height: 23px;
+        border-radius: 5px;
+        border: none;
+      }
+
+      textarea {
+        border-radius: 5px;
+        border: none;
+      }
+
+      address {
+      }
+
+      form > p {
+        width: 60%;
+        display: flex;
+        flex-flow: column nowrap;
+      }
+
+      #text-container {
+        margin-top: 45px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <div data-include="../components/subheader.html"></div>
+    <main>
+      <div id="form-container">
+        <form action="">
+          <h2 style="text-align: center">Contact Form</h2>
+          <!-- NAME -->
+          <p>
+            <label for="full-name">Full Name</label>
+            <input
+              type="text"
+              name="full-name"
+              id="full-name"
+              placeholder="e.g.) Jane Doe"
+            />
+          </p>
+          <!-- EMAIL -->
+          <p>
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="e.g.) Janedoe@email.TLD"
+            />
+          </p>
+          <!-- What do you want? -->
+          <p>
+            <label for="reason-for-contact">Full Name</label>
+            <input
+              type="text"
+              name="reason-for-contact"
+              id="reason-for-contact"
+              placeholder="e.g.) Future collaboration"
+            />
+          </p>
+          <!-- Are you student/professor/recruiter/other? -->
+          <p>
+            <label for="contact-role"
+              >Are you a student/professor/recruiter/other?</label
+            >
+            <select name="contact-role" id="contact-role">
+              <option disabled selected value style="display: none">
+                -- select an option --
+              </option>
+              <option value="student">Student</option>
+              <option value="professor">Professor</option>
+              <option value="recruiter">Recruiter</option>
+              <option value="other">Other</option>
+            </select>
+          </p>
+          <!-- Message -->
+          <p>
+            <label for="message">Message:</label>
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </p>
+          <!-- Submit btn -->
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div id="text-container">
+        <h3>Want to contact me?</h3>
+        <p>
+          Either submit a response through the form or contact me via the
+          information below and i'll get back to you!
+        </p>
+        <address>
+          John Smith<br />
+          Phone: (555) 123-4567<br />
+          Email: john.smith@email.com
+        </address>
+        <h4>Social Media Links:</h4>
+        <address></address>
+      </div>
+    </main>
+    <!-- FOOTER -->
+    <div data-include="../components/subfooter.html"></div>
+  </body>
+</html>
