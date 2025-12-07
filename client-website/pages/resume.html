@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alisha's Portfolio</title>
-
     <!-- FONT IMPORT BELOW: -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,32 +13,17 @@
     />
     <link rel="stylesheet" href="../css/default.css" />
     <script src="../js/html-include.js" defer></script>
+    <!-- Linting/HTML Validator -->
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
     <style>
       main {
-        box-sizing: border-box;
-        padding: 50px;
-        height: 100vh;
-      }
-
-      #upper-resume-split {
         display: flex;
-        flex-flow: row nowrap;
-        height: 40%;
-        width: 100%;
-      }
-
-      #upper-resume-split-text-container {
-        width: 60%;
-        height: 100%;
-      }
-
-
-      #headshot-photo {
-        width: 40%;
-        height: 100%;
-        box-sizing: border-box;
-        padding: 30px;
-        overflow: hidden;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
     </style>
   </head>
@@ -47,77 +31,111 @@
     <!-- HEADER -->
     <div data-include="../components/subheader.html"></div>
     <main>
-      <div id="upper-resume-split">
-        <img src="../img/temp-bg-rectangle.png" alt="" id="headshot-photo" />
+      <h2>Personal Resume</h2>
+
+      <div id="resume-container">
+        <div id="upper-resume-split">
+        <img
+          src="../img/blank-profile.jpg"
+          alt="Alisha Zhao headshot"
+          id="headshot-photo"
+        />
         <div id="upper-resume-split-text-container">
           <div>
-            <h3>FirstName LastName</h3>
+            <h3 class="resume">Alisha Zhao</h3>
             <b>Art Major | Animation</b>
             <p>Freshman @ SCAD</p>
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, eos
-            optio. Nostrum ullam asperiores voluptatibus nam ad, eveniet est
-            quam alias, accusantium hic consequatur perferendis perspiciatis
-            expedita aliquid animi? Quidem!
+            Alisha Zhao is a freshman at SCAD studying animation with a passion
+            for storytelling through movement and visual design. She is familiar
+            with many mediums in the animation space, including 2D hand-drawn
+            animation, stop-motion, digital character rigging, and motion
+            graphics. Zhao is also a talented artist, familiar with figure
+            drawing, color theory, storyboarding, and concept art development.
+            Her work blends whimsical character design with grounded emotional
+            narratives.
           </p>
         </div>
       </div>
-
-      <h3>Work Experience</h3>
+      <h3 class="resume">Work Experience</h3>
       <hr />
       <ul>
         <li>
-          <h4><span>Job Title</span> <span>Job Date</span></h4>
+          <h4><span>Freelance Illustrator</span> <span>Summer 2024</span></h4>
           <p>
-            Job Desc Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Fugit nihil, quos id voluptatum praesentium architecto? Doloremque
-            consectetur optio ipsam laboriosam fugit. Dolorem in mollitia error
-            nisi molestiae, fuga deleniti expedita?
+            Created custom character designs and digital illustrations for
+            independent clients, including small business branding projects and
+            social media content. Collaborated remotely with clients to bring
+            their creative visions to life while managing deadlines and
+            revisions professionally.
           </p>
         </li>
         <li>
-          <h4><span>Job Title</span> <span>Job Date</span></h4>
+          <h4>
+            <span>Animation Workshop Assistant</span>
+            <span>June 2023 - August 2023</span>
+          </h4>
           <p>
-            Job Desc Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Obcaecati reiciendis est dicta sint voluptas sed dolor maxime quae
-            quia consequuntur adipisci temporibus necessitatibus sequi aliquam,
-            neque, repudiandae unde! Veniam, natus.
+            Assisted lead instructors at a local community arts center in
+            teaching introductory animation workshops to middle and high school
+            students. Provided one-on-one support with software tools,
+            demonstrated traditional animation techniques, and helped students
+            develop their short film projects from concept to completion.
           </p>
         </li>
         <li>
-          <h4><span>Job Title</span> <span>Job Date</span></h4>
+          <h4>
+            <span>Graphic Design Intern</span>
+            <span>January 2023 - May 2023</span>
+          </h4>
           <p>
-            Job Desc Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Eius iusto rem perferendis itaque accusamus quos doloremque! Placeat
-            eligendi reprehenderit expedita facilis. Consequuntur sint impedit
-            consectetur quis illo enim natus illum.
+            Supported the marketing team at a youth-focused nonprofit
+            organization by creating promotional graphics, event posters, and
+            social media assets. Gained experience working with brand guidelines
+            and collaborating across departments to meet organizational
+            communication goals.
           </p>
         </li>
       </ul>
-
-      <h3>Education</h3>
+      <h3 class="resume">Education</h3>
       <hr />
       <ul>
         <li>
-          <h4><span>School Name</span> <span>High School Name</span></h4>
+          <h4><span>Riverside High School</span> <span>2020 - 2024</span></h4>
           <ul>
-            <li>GPA: ###</li>
-            <li>Notable Classes:</li>
+            <li>GPA: 3.9</li>
+            <li>
+              Notable Classes: AP Studio Art, Digital Media Production, Advanced
+              Drawing & Painting
+            </li>
           </ul>
         </li>
         <li>
-          <h4><span>School Name</span> <span>College Name</span></h4>
+          <h4>
+            <span>Savannah College of Art and Design (SCAD)</span>
+            <span>2024 - Present</span>
+          </h4>
           <ul>
-            <li>GPA: ###</li>
-            <li>Notable Classes:</li>
+            <li>GPA: 4.0</li>
+            <li>
+              Notable Classes: Foundations of Animation, Drawing for Animation,
+              Color Theory, Introduction to Storyboarding
+            </li>
           </ul>
         </li>
       </ul>
-
-      <h3>Other</h3>
+      <h3 class="resume">Other</h3>
       <hr />
-      <p>Extracurriculars and hobbies and all that</p>
+      <p>
+        Member of SCAD Animation Club and Illustration Society. Enjoys exploring
+        Savannah's historic architecture for sketching inspiration, watching
+        indie animated shorts, and experimenting with traditional watercolor
+        techniques. Passionate about environmental storytelling and creating
+        characters that resonate emotionally with audiences.
+      </p>
+
+      </div>
     </main>
     <!-- FOOTER -->
     <div data-include="../components/subfooter.html"></div>

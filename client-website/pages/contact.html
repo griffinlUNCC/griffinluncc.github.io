@@ -14,70 +14,28 @@
     />
     <link rel="stylesheet" href="../css/default.css" />
     <script src="../js/html-include.js" defer></script>
-
+    <!-- Linting/HTML Validator -->
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
     <style>
-      :root {
-        --primary-color: #c2bfb5;
-        --background-color: #ac9574;
-        --foreground-color: #81735b;
-        --text-color: #434342;
-        --heading-color: #e6e6e6;
-      }
       main {
         display: flex;
         flex-flow: row nowrap;
       }
       main > * {
-        width: 50%;
-        height: 100%;
-      }
-      form {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        gap: 10px;
         box-sizing: border-box;
-        background-color: var(--foreground-color);
-        padding: 15px;
-        margin: 180px 30px;
-        border-left: 15px solid var(--primary-color);
-        border-radius: 15px;
-        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
-          rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-      }
-
-      label {
-        color: var(--heading-color);
-      }
-
-      input {
-        height: 23px;
-        border-radius: 5px;
-        border: none;
-      }
-
-      textarea {
-        border-radius: 5px;
-        border: none;
-      }
-
-      address {
-      }
-
-      form > p {
-        width: 60%;
-        display: flex;
-        flex-flow: column nowrap;
-      }
-
-      #text-container {
-        margin-top: 45px;
+        width: 50%;
+        padding: 40px;
+        /* height: 100%; */
       }
     </style>
   </head>
   <body>
     <!-- HEADER -->
     <div data-include="../components/subheader.html"></div>
+    <h2 style="background-color: var(--background-color)">Contact Me</h2>
     <main>
       <div id="form-container">
         <form action="">
@@ -99,17 +57,17 @@
               type="email"
               name="email"
               id="email"
-              placeholder="e.g.) Janedoe@email.TLD"
+              placeholder="e.g.) janedoe@email.com"
             />
           </p>
           <!-- What do you want? -->
           <p>
-            <label for="reason-for-contact">Full Name</label>
+            <label for="reason-for-contact">Reason for Contact</label>
             <input
               type="text"
               name="reason-for-contact"
               id="reason-for-contact"
-              placeholder="e.g.) Future collaboration"
+              placeholder="e.g.) Commission inquiry, collaboration"
             />
           </p>
           <!-- Are you student/professor/recruiter/other? -->
@@ -135,6 +93,7 @@
               id="message"
               cols="30"
               rows="10"
+              placeholder="Tell me about your project or inquiry..."
             ></textarea>
           </p>
           <!-- Submit btn -->
@@ -145,15 +104,23 @@
         <h3>Want to contact me?</h3>
         <p>
           Either submit a response through the form or contact me via the
-          information below and i'll get back to you!
+          information below and I'll get back to you as soon as possible! I'm
+          always open to discussing animation projects, commission work, or
+          creative collaborations.
         </p>
         <address>
-          John Smith<br />
-          Phone: (555) 123-4567<br />
-          Email: john.smith@email.com
+          Alisha Zhao<br />
+          Phone: (912) 555-5555<br />
+          Email: alisha.zhao@NOCONTACT.FAKETLD
         </address>
         <h4>Social Media Links:</h4>
-        <address></address>
+        <address>
+          WARNING: THESE ARE FILLER LINKS - CLIENT HAS REQUESTED PRIVACY ATM
+          <br />
+          Twitter / X: @alishazhaoart<br />
+          Instagram: @alisha.creates<br />
+          LinkedIn: linkedin.com/in/alishazhao<br />
+        </address>
       </div>
     </main>
     <!-- FOOTER -->

@@ -15,25 +15,35 @@
     <link rel="stylesheet" href="../css/default.css" />
     <script src="../js/html-include.js" defer></script>
     <script src="../js/artwork-portfolio.js" defer></script>
+    <!-- Linting/HTML Validator -->
+    <script
+      src="https://lint.page/kit/4d0fe3.js"
+      crossorigin="anonymous"
+    ></script>
     <style></style>
   </head>
   <body>
     <!-- HEADER -->
     <div data-include="../components/subheader.html"></div>
     <main>
-      <p>
-        This site is incomplete - the information will not be correct and the
-        interactivity in both portfolios is incomplete. The styling is also
-        rough. However, the site is fully planned out and documented in figma,
-        and the content is a work in progress - need to discuss with client to
-        obtain pieces and documentation.
-      </p>
-      <b>Known issues:</b>
-      <ul>
-        <li>Poor contrast with text</li>
-        <li>Missing information - resolved with client in future</li>
-      </ul>
-      <div id="portfolio-container"></div>
+      <h2>Artwork Portfolio</h2>
+      <div id="artwork-container"></div>
+      <div id="overlay" class="hidden">
+        <div id="overlay-content">
+          <img src="" alt="" id="overlay-img" />
+          <div>
+            <div id="overlay-title-container">
+              <h3 id="overlay-title"></h3>
+              <b id="overlay-subtitle"></b>
+            </div>
+            <div id="overlay-description-container">
+              <p id="overlay-description"></p>
+              <p id="overlay-attributes"></p>
+            </div>
+          </div>
+        </div>
+        <!-- <button id="overlay-close-btn">Close</button> -->
+      </div>
     </main>
     <!-- FOOTER -->
     <div data-include="../components/subfooter.html"></div>
