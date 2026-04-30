@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details</title>
+
+    <!-- This removes the default browser styles so everything looks the same on all browsers -->
+    <link rel="stylesheet" href="../css/reset.css">
+
+    <!-- This has the main colors and fonts used across the whole site -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- This styles the top navigation bar and makes it work on small screens -->
+    <link rel="stylesheet" href="../css/header.css">
+
+    <!-- This styles everything specific to the car details page -->
+    <link rel="stylesheet" href="../css/car-details.css">
+
+    <!-- This runs the hamburger menu on mobile, same one used on all pages -->
+    <script src="../js/hamburger-handler.js" defer></script>
+
+    <!-- This runs the image carousel on this page -->
+    <script src="../js/car-details.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ── Top Navigation Bar ── -->
+    <!-- This is the same header structure as index.html so the styles match -->
+    <header>
+        <!-- Navbar -->
+        <div id="bar">
+            <a href="../index.html"><img
+                    src="../img/car-with-rainbow-colored-line-top-it_973002-8470-removebg-preview.png" alt="Logo"
+                    id="logo"></a>
+            <ul>
+                <li><a href="../pages/car-list.html" class="bar-link">Browse</a></li>
+                <li><a href="../pages/about-us.html" class="bar-link">About</a></li>
+                <li><a href="../pages/about-us.html" class="bar-link">Contact</a></li>
+            </ul>
+            <form id="searchbar-container" action="../pages/car-list.html" method="get">
+                <input placeholder="2024 Nissan Sentra" id="searchbar" />
+                <ul id="search-suggestions"></ul>
+            </form>
+
+            <!-- Hamburger button (mobile only) -->
+            <button id="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <button id="mode-toggle">☾</button>
+        </div>
+    </header>
+
+
+    <!-- Mobile dropdown menu -->
+    <ul id="mobile-menu" role="menu">
+        <li role="menuitem"><a href="../pages/car-list.html" class="bar-link">Browse</a></li>
+        <li role="menuitem"><a href="../pages/about-us.html" class="bar-link">About</a></li>
+        <li role="menuitem"><a href="../pages/about-us.html" class="bar-link">Contact</a></li>
+    </ul>
+
+    <main class="car-details-main">
+
+        <!-- Breadcrumb and title grouped so they sit flush together -->
+        <div class="car-header">
+            <p class="breadcrumb">Car Details</p>
+            <h1 class="car-title">2025 Nissan Versa</h1>
+        </div>
+
+        <!-- ── Top half of the page: car photos on the left, price info on the right ── -->
+        <div class="car-top">
+
+            <!-- Image carousel, the JS file swaps out the photo when you click the arrows or dots -->
+            <div class="car-carousel">
+
+                <!-- Left arrow button to go to the previous photo -->
+                <button class="carousel-btn prev" aria-label="Previous image">&#8249;</button>
+
+                <!-- This is the car photo being shown, the JS changes this when you navigate -->
+                <img class="carousel-img" src="../img/car-brands/imgs_zip/imgs/Nissan/nissanc1.avif" alt="Car image" />
+
+                <!-- Right arrow button to go to the next photo -->
+                <button class="carousel-btn next" aria-label="Next image">&#8250;</button>
+
+                <!-- These dots show how many photos there are and which one you are on.
+                 You can also click them to jump to that photo. -->
+                <div class="carousel-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+
+            <!-- Right side panel with pricing and car specs -->
+            <div class="car-sidebar">
+
+                <!-- This box shows the monthly price, upfront cost, deposit, and the lease button -->
+                <div class="pricing-box">
+                    <p class="price">$200<span>/mo</span></p>
+                    <p class="price-detail">Upfront: $1,200</p>
+                    <p class="price-detail">Deposit: $500</p>
+                    <p class="lease-type">Lease type: Closed-End Lease</p>
+
+                    <!-- Clicking LEASE takes you to the leasing application form -->
+                    <a href="./leasing-form.html">
+                        <button class="lease-btn">LEASE</button>
+                    </a>
+                </div>
+
+                <!-- This box shows 6 important car specs in a 2-column grid -->
+                <div class="key-details-box">
+                    <h2 class="section-title">Key Details</h2>
+                    <div class="key-details-grid">
+                        <div class="key-detail-item">
+                            <span class="detail-label">Lease Length</span>
+                            <span class="detail-value">36 months</span>
+                        </div>
+                        <div class="key-detail-item">
+                            <span class="detail-label">Mileage</span>
+                            <span class="detail-value">10,000 mi/yr</span>
+                        </div>
+                        <div class="key-detail-item">
+                            <span class="detail-label">Fuel</span>
+                            <span class="detail-value">Gasoline</span>
+                        </div>
+                        <div class="key-detail-item">
+                            <span class="detail-label">Transmission</span>
+                            <span class="detail-value">CVT Automatic</span>
+                        </div>
+                        <div class="key-detail-item">
+                            <span class="detail-label">Engine</span>
+                            <span class="detail-value">1.6L 4-Cylinder</span>
+                        </div>
+                        <div class="key-detail-item">
+                            <span class="detail-label">Seats</span>
+                            <span class="detail-value">5</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ── Bottom half of the page: summary info and lease details ── -->
+        <div class="car-bottom">
+
+            <!-- These two boxes sit next to each other -->
+            <div class="info-row">
+
+                <!-- Quick Summary lists basic info about the car like body type and color -->
+                <div class="info-box">
+                    <h2 class="section-title">Quick Summary</h2>
+                    <ul class="summary-list">
+                        <li>Body type: Sedan</li>
+                        <li>Fuel: Gasoline</li>
+                        <li>Transmission: CVT Automatic</li>
+                        <li>Seats: 5</li>
+                        <li>Doors: 4</li>
+                        <li>Color: Scarlet Ember</li>
+                    </ul>
+                </div>
+
+                <!-- Features & Specs goes into more detail about what the car comes with -->
+                <div class="info-box">
+                    <h2 class="section-title">Features &amp; Specs</h2>
+                    <p class="specs-text">8-inch touchscreen with Apple CarPlay &amp; Android Auto · Bluetooth &amp;
+                        USB-A connectivity · Rear-view camera · Automatic emergency braking · Lane departure warning ·
+                        Blind-spot monitoring · 32 mpg city / 40 mpg highway · Keyless entry &amp; push-button start ·
+                        LED headlights · 16-inch alloy wheels</p>
+                </div>
+            </div>
+
+            <!-- Lease Information explains the terms of leasing this car -->
+            <div class="info-box lease-info-box">
+                <h2 class="section-title">Lease Information</h2>
+                <ul class="lease-info-list">
+                    <li>Term: 36 months</li>
+                    <li>Annual mileage: 10,000 miles</li>
+                    <li>Early termination: Fee applies - contact us for details</li>
+                    <li>What's included: Roadside assistance, scheduled maintenance</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- This bar links to a page of cars that are similar to this one -->
+        <a href="./car-list.html">
+            <div class="similar-cars-bar">
+                <span>View Similar Cars</span>
+            </div>
+        </a>
+
+    </main>
+
+    <footer></footer>
+
+</body>
+
+</html>

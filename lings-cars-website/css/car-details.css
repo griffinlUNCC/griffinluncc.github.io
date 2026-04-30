@@ -1,0 +1,383 @@
+/* Page wrapper */
+.car-details-main {
+    box-sizing: border-box;
+    width: 100vw;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 25px;
+    background-color: var(--background);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+/* Constrain all direct children to a consistent content width */
+.car-details-main > * {
+    width: 80vw;
+}
+
+/* Breadcrumb + title wrapper */
+.car-header {
+    display: grid;
+    gap: 0.25rem;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    font-size: 0.8rem;
+    color: var(--text-color);
+}
+
+/* Car title */
+.car-title {
+    color: var(--heading-color);
+    font-size: clamp(1.6rem, 6vw, 2.8rem);
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+/* Top section: carousel + sidebar */
+/* Mobile: single column */
+.car-top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* Image carousel */
+.car-carousel {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background-color: var(--foreground);
+    border-radius: 8px;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    /* ambient + directional shadow */
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.45),
+        0 1px 4px  rgba(0, 0, 0, 0.30);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+/* lifts on hover */
+.car-carousel:hover {
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.50),
+        0 2px 8px  rgba(0, 0, 0, 0.35);
+    transform: translateY(-3px);
+}
+
+.carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Arrow buttons — 44px min touch target */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.45);
+    color: var(--heading-color);
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.2rem 0.6rem;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 4px;
+    transition: background 0.15s;
+}
+
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-btn.prev { left: 0.4rem; }
+.carousel-btn.next { right: 0.4rem; }
+
+/* Dot indicators */
+.carousel-dots {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-auto-flow: column;
+    gap: 0.4rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--text-color);
+    opacity: 0.5;
+    cursor: pointer;
+    padding: 4px;
+    box-sizing: content-box;
+}
+
+.dot.active {
+    background: var(--heading-color);
+    opacity: 1;
+}
+
+/* Sidebar (pricing + key details) */
+.car-sidebar {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* Pricing box */
+.pricing-box {
+    background-color: var(--foreground);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    /* prominent shadow — highest visual priority on page */
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.50),
+        0 2px 8px  rgba(0, 0, 0, 0.35);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+/* lifts on hover */
+.pricing-box:hover {
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.55),
+        0 4px 10px  rgba(0, 0, 0, 0.40);
+    transform: translateY(-3px);
+}
+
+.price {
+    color: var(--heading-color);
+    font-size: 1.6rem;
+    font-weight: 900;
+    margin-bottom: 0.25rem;
+}
+
+.price span {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+.price-detail {
+    font-size: 0.85rem;
+    margin-bottom: 0.15rem;
+}
+
+.lease-type {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* LEASE button */
+.lease-btn {
+    width: 100%;
+    padding: 0.85rem;
+    min-height: 48px;
+    background-color: var(--primary-color);
+    color: var(--heading-color);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    /* shadow beneath CTA button */
+    box-shadow: 0 4px 12px rgba(235, 94, 40, 0.35);
+    transition: opacity 0.15s, box-shadow 0.2s, transform 0.2s;
+}
+
+.lease-btn:hover {
+    opacity: 0.9;
+    /* lifts on hover */
+    box-shadow: 0 6px 18px rgba(235, 94, 40, 0.50);
+    transform: translateY(-2px);
+}
+
+/* Key Details box */
+.key-details-box {
+    background-color: var(--foreground);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    /* ambient + directional shadow */
+    box-shadow:
+        0 4px 16px rgba(0, 0, 0, 0.45),
+        0 1px 4px  rgba(0, 0, 0, 0.30);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+/* lifts on hover */
+.key-details-box:hover {
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.50),
+        0 2px 8px  rgba(0, 0, 0, 0.35);
+    transform: translateY(-3px);
+}
+
+.section-title {
+    color: var(--heading-color);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* 2-column grid for key specs */
+.key-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.65rem 1rem;
+}
+
+.key-detail-item {
+    display: grid;
+    gap: 0.1rem;
+}
+
+.detail-label {
+    font-size: 0.75rem;
+    color: var(--text-color);
+}
+
+.detail-value {
+    font-size: 0.9rem;
+    color: var(--heading-color);
+}
+
+/* Bottom section */
+.car-bottom {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* Mobile: Quick Summary and Features stack */
+.info-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.info-box {
+    background-color: var(--foreground);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    /* subtle shadow for surface depth */
+    box-shadow:
+        0 2px 8px  rgba(0, 0, 0, 0.40),
+        0 1px 2px  rgba(0, 0, 0, 0.25);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+/* lifts on hover */
+.info-box:hover {
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.50),
+        0 2px 6px  rgba(0, 0, 0, 0.35);
+    transform: translateY(-3px);
+}
+
+.summary-list,
+.lease-info-list {
+    list-style: disc;
+    padding-left: 1.2rem;
+    display: grid;
+    gap: 0.35rem;
+    font-size: 0.9rem;
+}
+
+.specs-text {
+    font-size: 0.9rem;
+}
+
+/* View Similar Cars bar */
+a:has(.similar-cars-bar) {
+    display: block;
+    width: 80vw;
+}
+
+.similar-cars-bar {
+    background-color: var(--foreground);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    min-height: 48px;
+    display: grid;
+    place-items: center;
+    color: var(--heading-color);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    /* subtle shadow + lift transition */
+    box-shadow:
+        0 2px 8px  rgba(0, 0, 0, 0.40),
+        0 1px 2px  rgba(0, 0, 0, 0.25);
+    transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.similar-cars-bar:hover {
+    background-color: var(--primary-color);
+    /* lifts on hover */
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.50),
+        0 2px 6px  rgba(0, 0, 0, 0.35);
+    transform: translateY(-2px);
+}
+
+/* Active nav link indicator */
+.header-item.current-page > a {
+    color: var(--primary-color);
+}
+
+/* Desktop overrides — 768px and wider */
+@media (min-width: 768px) {
+
+    /* Two-column grid: carousel left, sidebar right */
+    .car-top {
+        grid-template-columns: 60fr 38fr;
+        gap: 2rem;
+    }
+
+    .car-carousel {
+        height: auto;
+        min-height: 340px;
+    }
+
+    .pricing-box,
+    .key-details-box {
+        padding: 1.25rem 1.5rem;
+    }
+
+    /* Two-column grid: Quick Summary | Features & Specs */
+    .info-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .info-box {
+        padding: 1.25rem 1.5rem;
+    }
+}
+
+/* Small screen adjustments */
+@media (max-width: 600px) {
+    .car-details-main {
+        padding: 1rem 1rem 3rem;
+    }
+
+    .car-details-main > *,
+    a:has(.similar-cars-bar) {
+        width: 100%;
+    }
+}

@@ -1,0 +1,16 @@
+:root {
+    --primary-color: #EB5E28;
+    --foreground: #252422;
+    --background: #403D39;
+    --heading-color: #FFFCF2;
+    --text-color: #CCC5B9;
+}
+
+/* GLOBAL SETTINGS */
+* {
+    /* Disabled text decoration so we control link theming */
+    text-decoration: none;
+
+    /* Uncomment below to view borders for debugging */
+    /* outline: 1px solid red; */
+}
