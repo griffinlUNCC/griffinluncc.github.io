@@ -13,7 +13,7 @@
         ============================================================ */
         * {
             margin: 0;
-    font-family: 'Roboto', ui-monospace, SFMono-Regular, monospace;
+            font-family: 'Roboto', ui-monospace, SFMono-Regular, monospace;
             /* outline: 1px solid red; */
         }
 
@@ -637,7 +637,7 @@
                 img.addEventListener('click', () => {
                     const pos = Array.from(thumbnailContainer.children).indexOf(img);
                     removeActive();
-                    mainImage.style.backgroundImage = `src(${img.src})`;
+                    mainImage.style.backgroundImage = `url(${thumbnails[nextPos].src})`;
                     img.classList.add('selected');
                     carTitleElement.textContent = `${dataArr[pos].year} ${dataArr[pos].make} ${dataArr[pos].model}`;
                     carPriceElement.textContent = dataArr[pos].monthlyCost;
@@ -702,7 +702,7 @@
         })();
 
         const darkmodeToggle = document.getElementById('mode-toggle');
-        darkmodeToggle.addEventListener('click', ()=>{
+        darkmodeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
         });
     </script>
